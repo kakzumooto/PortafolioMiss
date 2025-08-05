@@ -1,0 +1,71 @@
+<!-- static/index.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Miss Sarahí | Portafolio</title>
+    <link href="/css/style.css" rel="stylesheet">
+</head>
+<body>
+
+<!-- Barra de navegación -->
+<header>
+    <nav>
+        <ul>
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#sobre-mi">Sobre mí</a></li>
+            <li><a href="#experiencia">Experiencia</a></li>
+            <li><a href="#galeria">Portafolio</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+        </ul>
+    </nav>
+</header>
+
+<!-- Hero Section -->
+<section id="inicio">
+    <h1>Hola, soy Miss Sarahí 👩‍🏫</h1>
+    <p>Maestra de preescolar apasionada por la enseñanza lúdica y amorosa.</p>
+    <a href="/cv_miss_sarahi.pdf" download>📄 Descargar CV</a>
+</section>
+
+<!-- Sobre mí -->
+<section id="sobre-mi">
+    <h2>Sobre mí</h2>
+    <p>Soy educadora con más de 5 años de experiencia en enseñanza preescolar. Me especializo en aprendizaje activo, valores y creatividad.</p>
+</section>
+
+<!-- Experiencia -->
+<section id="experiencia">
+    <h2>Experiencia</h2>
+    <ul>
+        <li>2020 - 2024: Kinder Estrellitas Brillantes</li>
+        <li>2018 - 2020: Jardín Infantil Sonrisas</li>
+    </ul>
+</section>
+
+<section id="galeria">
+    <h2>Galería de Actividades</h2>
+    <img src="/img/actividad1.jpg" alt="Actividad 1" width="200">
+    <img src="/img/actividad2.jpg" alt="Actividad 2" width="200">
+</section>
+
+<!-- Contacto -->
+<section id="contacto">
+    <h2>Contacto</h2>
+    <form id="formContacto">
+        <input type="text" name="nombre" placeholder="Tu nombre" required>
+        <input type="email" name="email" placeholder="Tu correo" required>
+        <textarea name="mensaje" placeholder="Tu mensaje" required></textarea>
+        <button type="submit">Enviar</button>
+    </form>
+</section>
+
+<!-- Botón de WhatsApp flotante -->
+<a href="https://wa.me/525531132462" target="_blank" style="position:fixed; bottom:20px; right:20px;">
+    <img src="/img/whatsapp.png" alt="WhatsApp" width="60">
+</a>
+
+<script src="/js/contacto.js"></script>
+</body>
+</html>
