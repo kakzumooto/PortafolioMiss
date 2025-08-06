@@ -1,13 +1,13 @@
-FROM eclipse-temurin:17-jdk-alpine
-
-# Establece el directorio de trabajo
+# Etapa 1: Construcción con Maven
+FROM maven:3.8.5-eclipse-temurin-17 AS build
 WORKDIR /app
+COPY . .
+RUN mvn clean package -DskipTests
 
-# Copia el jar generado
-COPY target/*.jar app.jar
+# Etapa 2: Imagen liviana para producción
+FROM eclipse-temurin:17-jdk-alpine
+WORKDIR /app
+COPY --from=build /app/target/*.jar app.jar
 
-# Expone el puerto 8080 (el que usa Spring Boot por defecto)
 EXPOSE 8080
-
-# Comando para ejecutar la app
 ENTRYPOINT ["java", "-jar", "app.jar"]
