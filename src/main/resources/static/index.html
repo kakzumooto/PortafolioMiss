@@ -165,7 +165,7 @@
 
 
 <!-- CONTACTO -->
-    <section id="contacto" class="scroll-mt-32 py-28 px-10 bg-gradient-to-b from-purple-100 to-white">
+    <section id="contacto" class="scroll-mt-32 py-28 px-10 mb-40 bg-gradient-to-b from-purple-100 to-white">
 
     <div class="max-w-md mx-auto">
         <h2 class="text-3xl font-semibold text-primary text-center mb-6">Contacto</h2>
@@ -219,7 +219,7 @@
     }
 </script>
 
-
+<!-- SCRIPT para marcar el menu -->
 <script src="/js/contacto.js"></script>
 <script>
     const navLinks = document.querySelectorAll(".nav-link");
@@ -242,6 +242,8 @@
       });
     });
 </script>
+
+<!-- SCRIPT de correo -->
 <script>
     const form = document.getElementById("formContacto");
     const mensajeConfirmacion = document.getElementById("mensajeConfirmacion");
@@ -273,6 +275,44 @@
       });
     });
 </script>
+<!-- SCRIPT de secciones -->
+<script>
+    const sections = document.querySelectorAll("section[id]");
+    const navLinks = document.querySelectorAll("nav a, #mobile-menu a");
+
+    function setActiveSection() {
+      const scrollY = window.pageYOffset;
+      let currentSectionId = "";
+
+      sections.forEach((section) => {
+        const sectionTop = section.offsetTop - 120; // ajuste para navbar
+        const sectionHeight = section.offsetHeight;
+
+        if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
+          currentSectionId = section.getAttribute("id");
+        }
+      });
+
+      navLinks.forEach((link) => {
+        link.classList.remove("text-primary", "font-bold");
+        if (link.getAttribute("href") === `#${currentSectionId}`) {
+          link.classList.add("text-primary", "font-bold");
+        }
+      });
+    }
+
+    // Detectar scroll
+    window.addEventListener("scroll", setActiveSection);
+
+    // Detectar clic en los enlaces para activar manualmente
+    navLinks.forEach((link) => {
+      link.addEventListener("click", () => {
+        setTimeout(setActiveSection, 400); // pequeño delay para esperar el scroll
+      });
+    });
+</script>
+
+
 
 </body>
 </html>
